@@ -1,3 +1,7 @@
+import json
+import os
+
+
 def menu():
     while True:
         print(" ***MENÚ*** ")
@@ -11,27 +15,29 @@ def menu():
         print("h. Cambio de contraseña.")
         print("i. Salida del sistema.")
 
-    input(">>>Ingrese una opción? ", end="")
+        opcion = input(">>>Ingrese una opción: ")
 
-       
-    if opcion == "a":
-        registrar_grupo()
-    elif opcion == "b":
-        registrar_modulo()
-    elif opcion == "c":
-        registrar_estudiante()
-    elif opcion == "d":
-        registrar_docente()
-    elif opcion == "e":
-        registrar_asistencia()
-    elif opcion == "h": 
-        registrar_contrasena()
-    elif opcion == "i":
-        print("Salida del sistema...") 
-        
-    else:
-        print("Opción no válida. ") 
-        input("Presione cualquier tecla para volver al menú...")
-        
+        if opcion == "a":
+            registro_grupo()
+        elif opcion == "b":
+            registrar_modulo()
+        elif opcion == "c":
+            registrar_estudiante()
+        elif opcion == "d":
+            registrar_docente()
+        elif opcion == "e":
+            registrar_asistencia()
+        elif opcion == "f":
+            consultar_informacion()
+        elif opcion == "g":
+            generar_informes()
+        elif opcion == "h":
+            cambiar_contrasena()
+        elif opcion == "i":
+            print("Salida del sistema...")
+            break
+        else:
+            print("Opción no válida.")
+            input("Presione cualquier tecla para volver al menú...")
 
-          
+menu()
