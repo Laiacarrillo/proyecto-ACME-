@@ -1,5 +1,8 @@
-import json
-import os
+from grupo.grupo import registro_grupo
+from modulos.modulos import registro_modulo
+from user_estudiantes.estudiantes import registro_estudiante
+from docentes.docentes import registro_docente
+from asistencia.asistencia import registro_asistencia
 
 
 def menu():
@@ -20,24 +23,24 @@ def menu():
         if opcion == "a":
             registro_grupo()
         elif opcion == "b":
-            registrar_modulo()
+            registro_modulo()
         elif opcion == "c":
-            registrar_estudiante()
+            registro_estudiante()
         elif opcion == "d":
-            registrar_docente()
+            registro_docente()
         elif opcion == "e":
-            registrar_asistencia()
-        elif opcion == "f":
-            consultar_informacion()
-        elif opcion == "g":
-            generar_informes()
-        elif opcion == "h":
-            cambiar_contrasena()
-        elif opcion == "i":
-            print("Salida del sistema...")
-            break
-        else:
-            print("Opción no válida.")
-            input("Presione cualquier tecla para volver al menú...")
+            registro_asistencia()
+        # elif opcion == "f":
+        #     consultar_informacion()
+        # elif opcion == "g":
+        #     generar_informes()
+        # elif opcion == "h":
+        #     cambiar_contrasena()
+        # elif opcion == "i":
+        #     print("Salida del sistema...")
+        #     break
+        # else:
+        #     print("Opción no válida.")
+        #     input("Presione cualquier tecla para volver al menú...")
 
 menu()

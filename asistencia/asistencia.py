@@ -1,54 +1,34 @@
-#diccionarios 
-grupos={}
-modulos={}
-estudiantes={}
-docentes={}
-asistencia={}
-
-#funcion de registro de grupo
-def registro_grupo():
-    grupo = {}
-    codigo = input("Ingrese el código del grupo: \n")
-    grupo["codigo"]= codigo
-    grupo["nombre"]=input("Ingrese el nombre del grupo:  \n")
-    grupos[codigo] = grupo
-    print(f"Grupo {grupo["nombre"]} fue registrado")
-
-#funcion de registro de modulos
-def registro_modulo():
-    modulo = {}
-    codigo = input("Ingrese el código del módulo: \n")
-    modulo["codigo"] = codigo
-    modulo["nombre"]=input("Ingrese el nombre del módulo:  \n")
-    modulos[codigo]=modulo
-    print(f"Módulo '{modulo["nombre"]}' fue registrado")
-
-#funcion de registro estudiantes
-def registro_estudiante():
-    estudiante={}
-    codigo=input("Ingrese el código: \n")
-    estudiante["nombre"]=input("Ingrese el nombre:  \n")
-    estudiante["sexo"]=input("Ingrese el sexo: \n")
-    estudiante["edad"]=int(input("Ingrese la edad \n"))
-    estudiantes[codigo]=estudiante
-    print(f"Estudiante '{estudiante["nombre"]}' fue registrado")
-
-#funcion de registro docentes
-def registro_docente():
-    docente={}
-    cedula=int(input("Ingrese la cédula: \n"))
-    docente["cedula"]=cedula
-    docente=input("Ingrese el nombre:  \n")
-    docentes[cedula]=docente
-    print(f"Docente '{docente["nombre"]}' fue registrado")
+import os
+import json
+from datetime import datetime
 
 #funcion de registro asistencia
 def registro_asistencia():
-    codigo=input("Ingrese el código del estudiante: \n")
-    codigo_modulo=input("Ingrese el códio del módulo: \n")
-    sexo=input("Ingrese el sexo: \n")
-    edad=int(input("Ingrese la edad \n"))
-    estudiantes[codigo]=
-    print(f"Estudiante '{estudiantes}' fue registrado")
-    
+    dia = {}
+    codigo_est = input('Digite el código de estudiante: ')
+    dia['codigo'] = codigo_est
+    dia['codigoModulo'] = input('Digite el código del módulo: ')
+    hora_entrada = input('Digite la hora de ingreso (Formato 24 horas):')
+    hora_entradaF = datetime.strptime(hora_entrada, '%H:%M')
+    dia['horaEntrada'] = hora_entradaF
+    hora_salida = input('Digite la hora de  (Formato 24 horas):')
+    hora_salidaF = datetime.strptime(hora_salida, '%H:%M')
+    dia['horaSalida'] = hora_salidaF
+    dia['horaEntrada'] = datetime.strftime(dia['horaEntrada'], '%H:%M')
+    dia['horaSalida'] = datetime.strftime(dia['horaSalida'], '%H:%M')
 
+    archivo_json = os.path.join('data', 'asistencia.json')
+
+    try:
+        with open(archivo_json, 'r') as f:
+            asistencias = json.load(f)
+    except FileNotFoundError:
+        asistencias = {}  
+    asistencias[codigo_est] = dia
+    print("Se ha registrado la asistencia")
+    asistencias_json = json.dumps(asistencias, indent=4)
+
+    with open(archivo_json, 'w') as f:
+        f.write(asistencias_json)
+
+registro_asistencia()
