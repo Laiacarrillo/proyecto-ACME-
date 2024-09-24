@@ -1,7 +1,12 @@
 {
-    "1098": {
-        "nombre": "Ytzhak",
-        "sexo": "m",
-        "edad": 17
+    "123": {
+        "nombre": "laia",
+        "sexo": "f",
+        "edad": 16
+    },
+    "234": {
+        "nombre": "laia",
+        "sexo": "f",
+        "edad": 16
     }
 }

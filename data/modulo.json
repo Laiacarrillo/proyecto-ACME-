@@ -2,5 +2,11 @@
     "98234": {
         "codigo": "98234",
         "nombre": "Sisas"
+    },
+    "& C:/Users/yorle/AppData/Local/Microsoft/WindowsApps/python3.11.exe c:/Users/yorle/proyecto-ACME-/index.py": {
+        "codigo": "& C:/Users/yorle/AppData/Local/Microsoft/WindowsApps/python3.11.exe c:/Users/yorle/proyecto-ACME-/index.py",
+        "nombre": "yu",
+        "horaEntrada": "14:30",
+        "horaSalida": "17:50"
     }
 }
