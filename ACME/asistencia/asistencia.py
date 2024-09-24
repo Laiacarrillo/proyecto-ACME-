@@ -1,7 +1,7 @@
 import os
 import json
 from datetime import datetime, timedelta
-from modulos.modulos import modulos
+from modelo.modelo import modulos
 from user_estudiantes.estudiantes import estudiantes
 modulos = {}
 estudiantes = {}

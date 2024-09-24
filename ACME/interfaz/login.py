@@ -1,7 +1,9 @@
 import hashlib
 import getpass
 import os
-from interfaz.menu import menu
+import menu
+
+
 contra_predefinida = "SISGESA"
 archivo_contra= "contra.txt"
 
